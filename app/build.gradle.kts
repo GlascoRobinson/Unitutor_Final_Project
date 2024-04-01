@@ -47,6 +47,9 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.firebase.storage)
     implementation(libs.firebase.database)
+    implementation("com.tom-roush:pdfbox-android:1.8.10.3")
+    //implementation ("org.apache.pdfbox:pdfbox:2.0.24")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

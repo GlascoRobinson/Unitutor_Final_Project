@@ -14,8 +14,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
-import org.apache.pdfbox.pdmodel.PDDocument
-import org.apache.pdfbox.text.PDFTextStripper
+import java.io.File
+import java.io.FileOutputStream
+import com.tom_roush.pdfbox.pdmodel.PDDocument
+import com.tom_roush.pdfbox.text.PDFTextStripper
+
+/*import org.apache.pdfbox.pdmodel.PDDocument
+import org.apache.pdfbox.text.PDFTextStripper*/
 
 
 
@@ -157,10 +162,13 @@ class RegistrationActivity : AppCompatActivity() {
         val performance = mutableMapOf<String, Int>()
         transcriptUri?.let { uri ->
             try {
-                val document = PDDocument.load(contentResolver.openInputStream(uri))
-                val stripper = PDFTextStripper()
-                val text = stripper.getText(document)
-                val lines = text.split("\n")
+                // Convert PDF to text file
+                val tempFile = File(cacheDir, "transcript.txt")
+                convertPdfToTextFile(uri, tempFile)
+
+                // Read the text content from the file
+                val textContent = readTextFromFile(tempFile.absolutePath)
+                val lines = textContent.split("\n")
 
                 // Assuming the format of each line is "Course Code - Grade"
                 for (line in lines) {
@@ -179,12 +187,29 @@ class RegistrationActivity : AppCompatActivity() {
                     }
                 }
 
-                document.close()
+                // Delete the temporary file
+                tempFile.delete()
             } catch (e: Exception) {
                 Toast.makeText(this, "Error reading transcript: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
         return performance
+    }
+
+    private fun convertPdfToTextFile(pdfUri: Uri, outputFile: File) {
+        val inputStream = contentResolver.openInputStream(pdfUri)
+        val pdfDocument = PDDocument.load(inputStream)
+        val pdfStripper = PDFTextStripper()
+        val pdfText = pdfStripper.getText(pdfDocument)
+        pdfDocument.close()
+
+        val outputStream = FileOutputStream(outputFile)
+        outputStream.write(pdfText.toByteArray())
+        outputStream.close()
+    }
+
+    private fun readTextFromFile(filePath: String): String {
+        return File(filePath).readText()
     }
 
     private fun uploadTranscript(userId: String) {
@@ -231,3 +256,4 @@ class RegistrationActivity : AppCompatActivity() {
         }
     }
 }
+
