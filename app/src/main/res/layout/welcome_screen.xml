@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:padding="16dp">
+
+    <!-- NCU Logo -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_image"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo" />
+
+    <!-- Mantra for University -->
+    <TextView
+        android:id="@+id/universityMantra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:text="Ubi Semper Discimus"
+        android:textColor="#41A44B"
+        android:textSize="17sp"
+        android:textStyle="bold|italic" />
+
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/universityMantra"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="Welcome to UniTutor"
+        android:textColor="#41A44B"
+        android:textSize="38sp"
+        android:textStyle="bold" />
+
+    <!-- Mantra for Unitutor -->
+    <TextView
+        android:id="@+id/unitutorMantra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:text="Learn, Earn or Pay"
+        android:textColor="#FFD503"
+        android:textSize="20sp"
+        android:textStyle="bold|italic" />
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/unitutorMantra"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_button"
+        android:text="Login"
+        android:textColor="@color/white" />
+
+    <!-- Registration Button -->
+    <Button
+        android:id="@+id/registrationButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button"
+        android:text="Register"
+        android:textColor="@color/white" />
+
+    <!-- Developers Information -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="Done by:\nDennis Coleman - 20181457\nGlasco Robinson - 20201187"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold|italic"
+        android:textAlignment="viewStart" />
+
+</RelativeLayout>
