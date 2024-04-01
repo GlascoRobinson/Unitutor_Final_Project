@@ -20,17 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         startActivity(Intent(this, WelcomeScreen::class.java))
 
-        /*/ Set click listeners for buttons
-        userLoginButton.setOnClickListener {
-            // Start LoginActivity when loginButton is clicked
-            startActivity(Intent(this, LoginActivity::class.java))
-        }
 
-        userRegistrationButton.setOnClickListener {
-            // Start RegistrationActivity when registrationButton is clicked
-            startActivity(Intent(this, RegistrationActivity::class.java))
-        }*/
-
-        // Additional initialization or functionality can be added here
     }
 }

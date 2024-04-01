@@ -36,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
             val email = userEmail.text.toString().trim()
             val password = userPassword.text.toString().trim()
             validateUser(email, password)
+
         }
 
 
@@ -59,11 +60,11 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
-        /*firebaseAuth.signInWithEmailAndPassword(email, password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     // User authentication successful, start ProfileActivity
-                    startActivity(Intent(this, ProfileActivity::class.java))
+                    startActivity(Intent(this, MainActivity::class.java))
                     finish() // Optional: Finish the LoginActivity to prevent going back
                 } else {
                     // Authentication failed, display an error message
@@ -71,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
                             "${task.exception?.message}",
                         Toast.LENGTH_LONG).show()
                 }
-            }*/
+            }
     }
 
     private fun userForgotPassword(){

@@ -89,6 +89,7 @@ class RegistrationActivity : AppCompatActivity() {
 
         registerButton.setOnClickListener {
             registerUser()
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 
