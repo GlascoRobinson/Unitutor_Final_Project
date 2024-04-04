@@ -63,8 +63,9 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // User authentication successful, start ProfileActivity
-                    startActivity(Intent(this, MainActivity::class.java))
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("userEmail", email)
+                    startActivity(intent)
                     finish() // Optional: Finish the LoginActivity to prevent going back
                 } else {
                     // Authentication failed, display an error message

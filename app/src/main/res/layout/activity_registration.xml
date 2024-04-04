@@ -39,13 +39,71 @@
                 android:textColor="#41A44B" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        
+
+        <!-- Email Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registrationemailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameInputLayout"
+            android:layout_marginTop="20dp"
+            android:hint="Email"
+            android:textColorHint="#41A44B">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType= "textEmailAddress"
+                android:textColor="#41A44B" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registrationpasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/registrationemailInput"
+            android:layout_marginTop="20dp"
+            android:hint="Password"
+            android:textColorHint="#41A44B">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType= "textPassword"
+                android:textColor="#41A44B" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Confirm Password Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/registrationconfirmpasswordInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/registrationpasswordInput"
+            android:layout_marginTop="20dp"
+            android:hint="Confirm Password"
+            android:textColorHint="#41A44B">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmpasswordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType= "textPassword"
+                android:textColor="#41A44B" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Student ID Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/studentIdInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/nameInputLayout"
+            android:layout_below="@id/registrationconfirmpasswordInput"
             android:layout_marginTop="20dp"
             android:hint="Student ID Number"
             android:textColorHint="#41A44B">
@@ -59,12 +117,31 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Department Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/departmentInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/studentIdInputLayout"
+            android:layout_marginTop="20dp"
+            android:hint="Department"
+            android:textColorHint="#41A44B">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/departmentInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="#41A44B" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <!-- Student Type Input -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/studentTypeInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/studentIdInputLayout"
+            android:layout_below="@id/departmentInputLayout"
             android:layout_marginTop="20dp"
             android:hint="Student Type (e.g., Freshman, Sophomore)"
             android:textColorHint="#41A44B">

@@ -34,10 +34,14 @@ class RegistrationActivity : AppCompatActivity() {
     private lateinit var courseContainer: LinearLayout
 
     private lateinit var nameInput: TextInputEditText
+    private lateinit var emailInput: TextInputEditText
+    private lateinit var passwordInput: TextInputEditText
+    private lateinit var confirmpasswordInput: TextInputEditText
+    private lateinit var studentIdInput: TextInputEditText
+    private lateinit var departmentInput: TextInputEditText
     private lateinit var studentTypeInput: TextInputEditText
     private lateinit var termInput: TextInputEditText
     private lateinit var yearInput: TextInputEditText
-    private lateinit var studentIdInput: TextInputEditText
 
     private val firebaseAuth = FirebaseAuth.getInstance()
     private val firebaseDatabase = FirebaseDatabase.getInstance().reference
@@ -66,10 +70,15 @@ class RegistrationActivity : AppCompatActivity() {
         courseContainer = findViewById(R.id.courseContainer)
 
         nameInput = findViewById(R.id.nameInput)
+        emailInput = findViewById(R.id.emailInput)
+        passwordInput = findViewById(R.id.passwordInput)
+        confirmpasswordInput = findViewById(R.id.confirmpasswordInput)
+        studentIdInput = findViewById(R.id.studentIdInput)
+        departmentInput = findViewById(R.id.departmentInput)
         studentTypeInput = findViewById(R.id.studentTypeInput)
         termInput = findViewById(R.id.termInput)
         yearInput = findViewById(R.id.yearInput)
-        studentIdInput = findViewById(R.id.studentIdInput)
+
 
         photoUploadButton.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
@@ -89,7 +98,7 @@ class RegistrationActivity : AppCompatActivity() {
 
         registerButton.setOnClickListener {
             registerUser()
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
     }
 
@@ -113,13 +122,28 @@ class RegistrationActivity : AppCompatActivity() {
 
     private fun registerUser() {
         val name = nameInput.text.toString().trim()
+        val email = emailInput.text.toString().trim()
+        val password = passwordInput.text.toString().trim()
+        val confirmpassword = confirmpasswordInput.text.toString().trim()
+        val studentId = studentIdInput.text.toString().trim()
+        val department = departmentInput.text.toString().trim()
         val studentType = studentTypeInput.text.toString().trim()
         val term = termInput.text.toString().trim()
         val year = yearInput.text.toString().trim()
-        val studentId = studentIdInput.text.toString().trim()
 
-        if (name.isEmpty() || studentType.isEmpty() || term.isEmpty() || year.isEmpty() || studentId.isEmpty() || courseList.isEmpty() || transcriptUri == null || photoUri == null) {
-            Toast.makeText(this, "Please fill in all fields and upload required documents", Toast.LENGTH_SHORT).show()
+
+        if (password != confirmpassword) {
+            Toast.makeText(this, "Passwords does not match", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty() || confirmpassword.isEmpty() || studentType.isEmpty()
+            || term.isEmpty() || year.isEmpty() || studentId.isEmpty() || department.isEmpty()
+            || courseList.isEmpty() )
+            //|| transcriptUri == null || photoUri == null)
+        {
+            Toast.makeText(this, "Please fill in all fields and upload required documents",
+                Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -131,10 +155,13 @@ class RegistrationActivity : AppCompatActivity() {
 
                     val userInfo = hashMapOf(
                         "name" to name,
+                        "email" to email,
+                        "password" to password,
+                        "studentId" to studentId,
+                        "department" to department,
                         "studentType" to studentType,
                         "term" to term,
                         "year" to year,
-                        "studentId" to studentId,
                         "courses" to courseList
                     )
 

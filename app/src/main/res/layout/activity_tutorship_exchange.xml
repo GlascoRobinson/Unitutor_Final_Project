@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="409dp"
+    android:layout_height="534dp"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-63dp">
+
+        <TextView
+            android:id="@+id/tutorship_exchange_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:text="Tutorship Exchange"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.097"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/offer_session_btn"
+            android:layout_width="146dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#AA1633"
+            android:text="Offer Session"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/request_session_btn"
+            app:layout_constraintHorizontal_bias="0.237"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tutorship_exchange_textView" />
+
+        <Button
+            android:id="@+id/request_session_btn"
+            android:layout_width="160dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#398A3C"
+            android:text="Request Session"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/offer_session_btn"
+            app:layout_constraintTop_toBottomOf="@+id/tutorship_exchange_textView" />
+
+        <TextView
+            android:id="@+id/session_feed_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Session Feed"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/offer_session_btn" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/session_feed_card"
+            android:layout_width="361dp"
+            android:layout_height="wrap_content"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/session_feed_textView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/session_feed_profile_pic"
+                    android:layout_width="146dp"
+                    android:layout_height="145dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="1dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/session_feed_name_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User Name"
+                    app:layout_constraintStart_toEndOf="@+id/session_feed_profile_pic"
+                    app:layout_constraintTop_toTopOf="@+id/session_feed_profile_pic"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="1dp"/>
+
+                <TextView
+                    android:id="@+id/session_feed_course_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Session Course"
+                    app:layout_constraintStart_toEndOf="@+id/session_feed_profile_pic"
+                    app:layout_constraintTop_toBottomOf="@+id/session_feed_name_textView"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/session_feed_date_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Session Date"
+                    app:layout_constraintStart_toEndOf="@+id/session_feed_profile_pic"
+                    app:layout_constraintTop_toBottomOf="@+id/session_feed_course_textView"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/session_feed_starttime_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Start Time"
+                    app:layout_constraintStart_toEndOf="@+id/session_feed_profile_pic"
+                    app:layout_constraintTop_toBottomOf="@+id/session_feed_date_textView"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"/>
+
+                <TextView
+                    android:id="@+id/session_feed_to_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="to"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/session_feed_starttime_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/session_feed_date_textView"
+                    android:layout_marginStart="8dp"/>
+
+                <TextView
+                    android:id="@+id/session_feed_endtime_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="End Time"
+                    app:layout_constraintStart_toEndOf="@+id/session_feed_to_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/session_feed_date_textView"
+                    android:layout_marginStart="8dp"/>
+
+                <TextView
+                    android:id="@+id/session_feed_rate_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hourly Rate"
+                    app:layout_constraintStart_toEndOf="@+id/session_feed_profile_pic"
+                    app:layout_constraintTop_toBottomOf="@+id/session_feed_starttime_textView"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"/>
+
+                <Button
+                    android:id="@+id/session_feed_request_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Request"
+                    app:layout_constraintStart_toStartOf="@id/session_feed_name_textView"
+                    app:layout_constraintTop_toBottomOf="@+id/session_feed_rate_textView"
+                    android:layout_marginTop="16dp"/>
+
+                <Button
+                    android:id="@+id/session_feed_bid_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bid"
+                    app:layout_constraintStart_toEndOf="@id/session_feed_request_btn"
+                    app:layout_constraintTop_toTopOf="@+id/session_feed_request_btn"
+                    android:layout_marginStart="8dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>

@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -48,9 +51,12 @@ dependencies {
     implementation(libs.firebase.storage)
     implementation(libs.firebase.database)
     implementation("com.tom-roush:pdfbox-android:1.8.10.3")
+    implementation(libs.androidx.recyclerview)
     //implementation ("org.apache.pdfbox:pdfbox:2.0.24")
 
     testImplementation(libs.junit)
+    implementation ("androidx.cardview:cardview:1.0.0")
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }
