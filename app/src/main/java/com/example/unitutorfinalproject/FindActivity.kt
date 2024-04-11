@@ -1,39 +1,35 @@
 package com.example.unitutorfinalproject
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import android.content.ContentValues.TAG
+import android.content.Intent
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 
-
-class MainActivity : AppCompatActivity() {
+class FindActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: DashboardItemsAdapter
-    private val db = FirebaseFirestore.getInstance()
-    private val usersCollection = db.collection("StoredUsers")
+    private lateinit var adapter: FindAdapter // Declare RecyclerView adapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_find)
 
-        recyclerView = findViewById(R.id.dashboard_recyclerView)
+        // Initialize RecyclerView and adapter
+        recyclerView = findViewById(R.id.find_recyclerView)
+        adapter = FindAdapter(ArrayList()) // Initialize the adapter with an empty list
+
+        // Set layout manager and adapter to the RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = DashboardItemsAdapter(ArrayList())
         recyclerView.adapter = adapter
 
-        // Get the logged-in user's email from the intent extras
-        val userEmail = intent.getStringExtra("userEmail")
-        if (!userEmail.isNullOrEmpty()) {
-            fetchUserData(userEmail)
-        } else {
-            // Handle case where userEmail is null or empty
-            Log.e("MainActivity", "Couldn't retrieve account. User email is null or empty")
-        }
+        // Fetch find data from Firestore
+        fetchFindData()
+
         // Set up bottom navigation
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener { menuItem ->
@@ -58,38 +54,33 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchUserData(userEmail: String) {
-        usersCollection.whereEqualTo("email", userEmail)
-            .get()
+    private fun fetchFindData() {
+        // Implement logic to fetch find user data from your database collection
+        // Example: Use Firebase Firestore to fetch find user data
+        val db = FirebaseFirestore.getInstance()
+        val findCollection = db.collection("StoredUsers")
+
+        findCollection.get()
             .addOnSuccessListener { result ->
-                val userList = ArrayList<DashboardItem>()
+                val findList = ArrayList<Find>()
+
                 for (document in result) {
                     val name = document.getString("name") ?: ""
                     val email = document.getString("email") ?: ""
-                    val password = document.getString("password") ?: ""
                     val department = document.getString("department") ?: ""
-                    val studentType = document.getString("studentType") ?: ""
-                    val term = document.getString("term") ?: ""
-                    val year = document.getString("year") ?: ""
                     val courseList = document.getString("courseList") ?: ""
-                    userList.add(
-                        DashboardItem(
-                            name,
-                            email,
-                            password,
-                            department,
-                            studentType,
-                            term,
-                            year,
-                            courseList
-                        )
-                    )
+
+                    val find = Find(name, email, department, courseList)
+                    findList.add(find)
                 }
-                adapter.itemList = userList
+
+                // Update the adapter with the fetched find user data
+                adapter.findList = findList
                 adapter.notifyDataSetChanged()
             }
             .addOnFailureListener { exception ->
-                Log.e("MainActivity", "Error fetching users", exception)
+                Log.e(TAG, "Error fetching find user data", exception)
             }
     }
+
 }

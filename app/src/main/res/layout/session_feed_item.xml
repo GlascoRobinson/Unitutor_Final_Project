@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="#FFEB3B"
+    android:padding="1dp"
+    tools:context=".MainActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="374dp"
+        android:layout_height="245dp"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/session_profile_pic"
+                android:layout_width="117dp"
+                android:layout_height="111dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/session_name_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="User Name"
+                app:layout_constraintStart_toEndOf="@id/session_profile_pic"
+                app:layout_constraintTop_toTopOf="@id/session_profile_pic" />
+
+            <TextView
+                android:id="@+id/session_course_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Session Course"
+                app:layout_constraintStart_toEndOf="@id/session_profile_pic"
+                app:layout_constraintTop_toBottomOf="@id/session_name_textView" />
+
+            <TextView
+                android:id="@+id/session_feed_date_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Session Date"
+                app:layout_constraintStart_toEndOf="@id/session_profile_pic"
+                app:layout_constraintTop_toBottomOf="@id/session_course_textView" />
+
+            <TextView
+                android:id="@+id/session_feed_starttime_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Start Time"
+                app:layout_constraintStart_toEndOf="@id/session_profile_pic"
+                app:layout_constraintTop_toBottomOf="@id/session_feed_date_textView" />
+
+            <TextView
+                android:id="@+id/session_feed_to_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="to"
+                app:layout_constraintStart_toEndOf="@id/session_feed_starttime_textView"
+                app:layout_constraintTop_toBottomOf="@id/session_feed_date_textView" />
+
+            <TextView
+                android:id="@+id/session_feed_endtime_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="End Time"
+                app:layout_constraintStart_toEndOf="@id/session_feed_to_textView"
+                app:layout_constraintTop_toBottomOf="@id/session_feed_date_textView" />
+
+            <TextView
+                android:id="@+id/session_feed_rate_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Hourly Rate"
+                app:layout_constraintStart_toEndOf="@id/session_profile_pic"
+                app:layout_constraintTop_toBottomOf="@id/session_feed_starttime_textView" />
+
+            <Button
+                android:id="@+id/session_request_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#2DA332"
+                android:text="Request"
+                app:layout_constraintStart_toStartOf="@id/session_name_textView"
+                app:layout_constraintTop_toBottomOf="@id/session_feed_rate_textView" />
+
+            <Button
+                android:id="@+id/session_feed_bid_btn"
+                android:layout_width="76dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#CFBE23"
+                android:text="Bid"
+                app:layout_constraintStart_toEndOf="@id/session_request_btn"
+                app:layout_constraintTop_toTopOf="@+id/session_request_btn" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

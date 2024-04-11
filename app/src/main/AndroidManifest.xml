@@ -23,13 +23,19 @@
         </activity>
         <!-- LoginActivity -->
         <activity android:name=".LoginActivity" />
-
         <!-- RegistrationActivity -->
         <activity android:name=".RegistrationActivity" />
         <!--MainActivity-->
         <activity android:name=".MainActivity"/>
         <!--ForgotPasswordActivity-->
         <activity android:name=".ForgotPasswordActivity"/>
+        <!--SessionFormActivity-->
+        <activity android:name=".SessionFormActivity"/>
+        <!--TutorshipActivity-->
+        <activity android:name=".TutorshipActivity"/>
+        <!--FindActivity-->
+        <activity android:name=".FindActivity"/>
+
     </application>
 
 </manifest>

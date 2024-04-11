@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+<item
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:title="Home"
+    android:id="@+id/navigation_home"
+    android:icon="@drawable/btm_nav_home"/>
+<item
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:title="Exchange"
+    android:id="@+id/navigation_exchange"
+    android:icon="@drawable/btm_nav_exchange"/>
+<item
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:title="Find"
+    android:id="@+id/navigation_find"
+    android:icon="@drawable/btm_nav_find"/>
+</menu>
