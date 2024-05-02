@@ -24,15 +24,17 @@ class FindAdapter(var findList: List<Find>) :
     override fun getItemCount(): Int = findList.size
 
     class FindViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nameTextView: TextView = itemView.findViewById(R.id.find_name_textView)
+        private val firstnameTextView: TextView = itemView.findViewById(R.id.find_firstname_textView)
+        private val lastnameTextView: TextView = itemView.findViewById(R.id.find_lastname_textView)
         private val emailTextView: TextView = itemView.findViewById(R.id.find_email_textView)
-        private val courseTextView: TextView = itemView.findViewById(R.id.find_course_textView)
+        private val studentTypeTextView: TextView = itemView.findViewById(R.id.find_studentType_textView)
         private val departmentTextView: TextView = itemView.findViewById(R.id.find_department_textView)
 
         fun bind(find: Find) {
-            nameTextView.text = find.name
+            firstnameTextView.text = find.firstname
+            lastnameTextView.text = find.lastname
             emailTextView.text = find.email
-            courseTextView.text = find.courseList
+            studentTypeTextView.text = find.studentType
             departmentTextView.text = find.department
         }
     }

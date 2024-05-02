@@ -35,6 +35,9 @@
         <activity android:name=".TutorshipActivity"/>
         <!--FindActivity-->
         <activity android:name=".FindActivity"/>
+        <!--DashboardItemsAdapter Activity-->
+        <activity android:name=".DashboardItemsAdapter"/>
+
 
     </application>
 

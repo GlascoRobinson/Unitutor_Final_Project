@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
@@ -26,6 +25,29 @@ class MainActivity : AppCompatActivity() {
         adapter = DashboardItemsAdapter(ArrayList())
         recyclerView.adapter = adapter
 
+        // Set up bottom navigation
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigation.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_home -> {
+                    // No need to navigate, already on home
+                    true
+                }
+                R.id.navigation_exchange -> {
+                    startActivity(Intent(this, TutorshipActivity::class.java))
+                    true
+                }
+                R.id.navigation_find -> {
+                    startActivity(Intent(this, FindActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
         // Get the logged-in user's email from the intent extras
         val userEmail = intent.getStringExtra("userEmail")
         if (!userEmail.isNullOrEmpty()) {
@@ -33,28 +55,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             // Handle case where userEmail is null or empty
             Log.e("MainActivity", "Couldn't retrieve account. User email is null or empty")
-        }
-        // Set up bottom navigation
-        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNavigation.setOnNavigationItemSelectedListener { menuItem ->
-            when (menuItem.itemId) {
-                R.id.navigation_home -> {
-                    // Navigate to activity_main.xml
-                    startActivity(Intent(this, MainActivity::class.java))
-                    true
-                }
-                R.id.navigation_exchange -> {
-                    // Navigate to activity_tutorship.xml
-                    startActivity(Intent(this, TutorshipActivity::class.java))
-                    true
-                }
-                R.id.navigation_find -> {
-                    // Navigate to activity_find.xml
-                    startActivity(Intent(this, FindActivity::class.java))
-                    true
-                }
-                else -> false
-            }
         }
     }
 
@@ -64,24 +64,12 @@ class MainActivity : AppCompatActivity() {
             .addOnSuccessListener { result ->
                 val userList = ArrayList<DashboardItem>()
                 for (document in result) {
-                    val name = document.getString("name") ?: ""
-                    val email = document.getString("email") ?: ""
-                    val password = document.getString("password") ?: ""
-                    val department = document.getString("department") ?: ""
-                    val studentType = document.getString("studentType") ?: ""
-                    val term = document.getString("term") ?: ""
-                    val year = document.getString("year") ?: ""
-                    val courseList = document.getString("courseList") ?: ""
+                    val firstname = document.getString("firstname") ?: ""
+                    val GPA = document.getDouble("GPA") ?: 0.0 // Default value if GPA is null
                     userList.add(
                         DashboardItem(
-                            name,
-                            email,
-                            password,
-                            department,
-                            studentType,
-                            term,
-                            year,
-                            courseList
+                            firstname,
+                            GPA
                         )
                     )
                 }

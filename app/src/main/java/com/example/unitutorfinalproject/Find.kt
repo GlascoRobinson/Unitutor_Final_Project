@@ -1,8 +1,9 @@
 package com.example.unitutorfinalproject
 
 data class Find (
-        val name: String,
+        val firstname: String,
+        val lastname: String,
         val email: String,
-        val courseList: String,
-        val department: String
+        val department: String,
+        val studentType: String
 )

@@ -25,14 +25,14 @@
         android:layout_below="@id/logo"
         android:layout_marginTop="30dp"
         android:hint="Email"
-        android:textColorHint="#41A44B">
+        android:textColor="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:textColor="#41A44B" />
+            android:textColor="@color/black" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -44,7 +44,7 @@
         android:layout_below="@id/emailInputLayout"
         android:layout_marginTop="20dp"
         android:hint="Password"
-        android:textColorHint="#41A44B"
+        android:textColor="@color/black"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:textColor="#41A44B" />
+            android:textColor="@color/black" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -89,7 +89,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:text="Don't have an account?"
-        android:textColor="#41A44B"
+        android:textColor="@color/black"
         android:textSize="17sp" />
 
     <!-- Registration Button -->

@@ -37,32 +37,47 @@
                 android:layout_height="111dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:src="@drawable/tutorshipimg"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/session_name_textView"
+                android:id="@+id/session_firstname_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginStart="8dp"
-                android:text="User Name"
+                android:text="Firstname"
                 app:layout_constraintStart_toEndOf="@id/session_profile_pic"
                 app:layout_constraintTop_toTopOf="@id/session_profile_pic" />
+
+            <TextView
+                android:id="@+id/session_lastname_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Lastname"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/session_firstname_textView"
+                app:layout_constraintTop_toTopOf="@+id/session_firstname_textView" />
 
             <TextView
                 android:id="@+id/session_course_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginStart="8dp"
                 android:text="Session Course"
                 app:layout_constraintStart_toEndOf="@id/session_profile_pic"
-                app:layout_constraintTop_toBottomOf="@id/session_name_textView" />
+                app:layout_constraintTop_toBottomOf="@id/session_firstname_textView" />
 
             <TextView
                 android:id="@+id/session_feed_date_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginStart="8dp"
                 android:text="Session Date"
                 app:layout_constraintStart_toEndOf="@id/session_profile_pic"
@@ -72,6 +87,7 @@
                 android:id="@+id/session_feed_starttime_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginStart="8dp"
                 android:text="Start Time"
                 app:layout_constraintStart_toEndOf="@id/session_profile_pic"
@@ -81,6 +97,7 @@
                 android:id="@+id/session_feed_to_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginStart="8dp"
                 android:text="to"
                 app:layout_constraintStart_toEndOf="@id/session_feed_starttime_textView"
@@ -90,6 +107,7 @@
                 android:id="@+id/session_feed_endtime_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginStart="8dp"
                 android:text="End Time"
                 app:layout_constraintStart_toEndOf="@id/session_feed_to_textView"
@@ -99,6 +117,7 @@
                 android:id="@+id/session_feed_rate_textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginStart="8dp"
                 android:text="Hourly Rate"
                 app:layout_constraintStart_toEndOf="@id/session_profile_pic"
@@ -111,7 +130,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="#2DA332"
                 android:text="Request"
-                app:layout_constraintStart_toStartOf="@id/session_name_textView"
+                app:layout_constraintStart_toStartOf="@id/session_firstname_textView"
                 app:layout_constraintTop_toBottomOf="@id/session_feed_rate_textView" />
 
             <Button

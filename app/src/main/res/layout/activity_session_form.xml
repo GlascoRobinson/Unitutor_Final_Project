@@ -1,150 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     android:padding="16dp">
 
-
-    <EditText
-        android:id="@+id/session_form_hourly_rate"
-        android:layout_width="278dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="16dp"
-        android:hint="Enter hourly rate"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/session_form_hourly_rate_label"
-        app:layout_constraintTop_toTopOf="@id/session_form_hourly_rate_label" />
-
-    <EditText
-        android:id="@+id/session_form_course"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:hint="Enter session course"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/session_form_course_label"
-        app:layout_constraintTop_toTopOf="@id/session_form_course_label" />
-
-    <EditText
-        android:id="@+id/session_form_end_time"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:hint="Enter end time"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/session_form_end_time_label"
-        app:layout_constraintTop_toTopOf="@id/session_form_end_time_label" />
-
-    <EditText
-        android:id="@+id/session_form_name"
-        android:layout_width="318dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="8dp"
-        android:hint="Enter your name"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/session_form_name_label"
-        app:layout_constraintTop_toTopOf="@id/session_form_name_label" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/session_form_name_label"
+        android:id="@+id/session_form_heading_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="Name"
-        android:textSize="18sp"
+        android:layout_marginTop="20dp"
+        android:text="Session Form"
+        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/session_form_hourly_rate_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="Hourly Rate"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/session_form_end_time" />
+        <TextView
+            android:id="@+id/session_form_firstname_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="First Name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/session_form_heading_textView" />
 
-    <TextView
-        android:id="@+id/session_form_date_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Session Date"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/session_form_course" />
 
-    <TextView
-        android:id="@+id/session_form_course_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Session Course"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/session_form_name" />
+        <EditText
+            android:id="@+id/session_form_firstname"
+            android:layout_width="250dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="9dp"
+            android:hint="Enter firstname"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/session_form_firstname_label" />
 
-    <EditText
-        android:id="@+id/session_form_date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Enter session date"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/session_form_date_label"
-        app:layout_constraintTop_toTopOf="@id/session_form_date_label" />
+        <TextView
+            android:id="@+id/session_form_lastname_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Last Name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/session_form_firstname" />
 
-    <EditText
-        android:id="@+id/session_form_start_time"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Enter start time"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/session_form_start_time_label"
-        app:layout_constraintTop_toTopOf="@id/session_form_start_time_label" />
 
-    <TextView
-        android:id="@+id/session_form_end_time_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="End Time"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/session_form_start_time" />
+        <EditText
+            android:id="@+id/session_form_lastname"
+            android:layout_width="250dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="9dp"
+            android:hint="Enter lastname"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/session_form_lastname_label" />
 
-    <TextView
-        android:id="@+id/session_form_start_time_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Start Time"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/session_form_date" />
 
-    <Button
-        android:id="@+id/session_form_submit_btn"
-        android:layout_width="124dp"
-        android:layout_height="55dp"
-        android:text="Submit"
-        tools:layout_editor_absoluteX="128dp"
-        tools:layout_editor_absoluteY="592dp" />
+        <TextView
+            android:id="@+id/session_form_course_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Session Course"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/session_form_lastname" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <AutoCompleteTextView
+            android:id="@+id/session_form_course_autocomplete"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="eg. CPTR241: Programming II"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/session_form_course_label" />
+
+        <TextView
+            android:id="@+id/session_form_date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Session Date"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/session_form_course_autocomplete" />
+
+        <Button
+            android:id="@+id/session_form_date_button"
+            android:layout_width="229dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:hint="dd/mm/yyyy"
+            android:inputType="date"
+            android:text="Select Date"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/session_form_date_label" />
+
+
+        <TextView
+            android:id="@+id/session_form_start_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Start time"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/session_form_date_button" />
+
+        <Button
+            android:id="@+id/session_form_start_time_button"
+            android:layout_width="229dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:hint="dd/mm/yyyy"
+            android:inputType="date"
+            android:text="Select Time"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/session_form_start_time_label" />
+
+        <TextView
+            android:id="@+id/session_form_end_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="End time"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/session_form_start_time_button" />
+
+
+        <Button
+            android:id="@+id/session_form_end_time_button"
+            android:layout_width="227dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="4dp"
+            android:hint="dd/mm/yyyy"
+            android:inputType="date"
+            android:text="Select Time"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/session_form_end_time_label" />
+
+        <TextView
+            android:id="@+id/session_form_hourly_rate_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Hourly Rate"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/session_form_end_time_button" />
+
+        <SeekBar
+            android:id="@+id/session_form_hourly_rate_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/session_form_hourly_rate_label" />
+
+        <TextView
+            android:id="@+id/session_form_hourly_rate_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Hourly Rate: $500"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/session_form_hourly_rate_seekbar" />
+        <Button
+            android:id="@+id/session_form_submit_btn"
+            android:layout_width="124dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="44dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#D52C2C"
+            android:text="Submit"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/session_form_hourly_rate_display"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

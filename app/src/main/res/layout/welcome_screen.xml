@@ -1,97 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
     android:padding="16dp">
 
     <!-- NCU Logo -->
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/rounded_image"
-        android:scaleType="fitXY"
-        android:src="@drawable/logo" />
-
-    <!-- Mantra for University -->
-    <TextView
-        android:id="@+id/universityMantra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
-        android:text="Ubi Semper Discimus"
-        android:textColor="#41A44B"
-        android:textSize="17sp"
-        android:textStyle="bold|italic" />
 
     <!-- Welcome Text -->
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="135dp"
+        android:layout_height="125dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/rounded_image"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/universityMantra"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:text="Welcome to UniTutor"
         android:textColor="#41A44B"
         android:textSize="38sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
 
-    <!-- Mantra for Unitutor -->
+    <!-- University Mantra -->
+    <TextView
+        android:id="@+id/universityMantra"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:text="Ubi Semper Discimus"
+        android:textAlignment="center"
+        android:textColor="#41A44B"
+        android:textSize="17sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcomeText" />
+
+    <!-- Unitutor Mantra -->
     <TextView
         android:id="@+id/unitutorMantra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/welcomeText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         android:text="Learn, Earn or Pay"
         android:textColor="#FFD503"
         android:textSize="20sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/universityMantra" />
 
     <!-- Login Button -->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/unitutorMantra"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:background="@drawable/rounded_button"
         android:text="Login"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/unitutorMantra" />
 
     <!-- Registration Button -->
     <Button
         android:id="@+id/registrationButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loginButton"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/rounded_button"
         android:text="Register"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginButton" />
 
     <!-- Developers Information -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="16dp"
         android:text="Done by:\nDennis Coleman - 20181457\nGlasco Robinson - 20201187"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         android:textStyle="bold|italic"
-        android:textAlignment="viewStart" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registrationButton"
+        app:layout_constraintVertical_bias="0.593" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

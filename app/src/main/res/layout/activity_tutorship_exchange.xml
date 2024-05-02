@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     android:fillViewport="true">
 
         <TextView
@@ -12,6 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
+            android:textColor="@color/black"
             android:text="Tutorship Exchange"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -29,8 +31,6 @@
             android:backgroundTint="#AA1633"
             android:text="Offer Session"
             app:cornerRadius="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/request_session_btn"
-            app:layout_constraintHorizontal_bias="0.237"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tutorship_exchange_textView" />
 
@@ -38,14 +38,15 @@
             android:id="@+id/request_session_btn"
             android:layout_width="160dp"
             android:layout_height="52dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="88dp"
+            android:layout_marginEnd="48dp"
             android:backgroundTint="#398A3C"
             android:text="Request Session"
             app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.666"
             app:layout_constraintStart_toEndOf="@+id/offer_session_btn"
-            app:layout_constraintTop_toBottomOf="@+id/tutorship_exchange_textView" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/session_feed_textView"
@@ -53,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="Session Feed"
+            android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

@@ -65,12 +65,13 @@ class FindActivity : AppCompatActivity() {
                 val findList = ArrayList<Find>()
 
                 for (document in result) {
-                    val name = document.getString("name") ?: ""
+                    val firstname = document.getString("firstname") ?: ""
+                    val lastname = document.getString("lastname") ?: ""
                     val email = document.getString("email") ?: ""
                     val department = document.getString("department") ?: ""
-                    val courseList = document.getString("courseList") ?: ""
+                    val studentType = document.getString("studentType") ?: ""
 
-                    val find = Find(name, email, department, courseList)
+                    val find = Find(firstname, lastname, email, department, studentType)
                     findList.add(find)
                 }
 

@@ -23,7 +23,8 @@ class SessionFeedAdapter(var sessionList: List<Session>) :
     override fun getItemCount(): Int = sessionList.size
 
     inner class SessionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nameTextView: TextView = itemView.findViewById(R.id.session_name_textView)
+        private val firstNameTextView: TextView = itemView.findViewById(R.id.session_firstname_textView)
+        private val lastNameTextView: TextView = itemView.findViewById(R.id.session_lastname_textView)
         private val courseTextView: TextView = itemView.findViewById(R.id.session_course_textView)
         private val dateTextView: TextView = itemView.findViewById(R.id.session_feed_date_textView)
         private val startTimeTextView: TextView = itemView.findViewById(R.id.session_feed_starttime_textView)
@@ -31,7 +32,8 @@ class SessionFeedAdapter(var sessionList: List<Session>) :
         private val rateTextView: TextView = itemView.findViewById(R.id.session_feed_rate_textView)
 
         fun bind(session: Session) {
-            nameTextView.text = session.name
+            firstNameTextView.text = session.firstname
+            lastNameTextView.text = session.lastname
             courseTextView.text = session.sessionCourse
             dateTextView.text = session.sessionDate
             startTimeTextView.text = session.startTime

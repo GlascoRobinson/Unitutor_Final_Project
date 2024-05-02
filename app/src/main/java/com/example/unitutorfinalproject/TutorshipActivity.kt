@@ -87,14 +87,15 @@ class TutorshipActivity : AppCompatActivity() {
                 val sessionList = ArrayList<Session>()
 
                 for (document in result) {
-                    val name = document.getString("name") ?: ""
+                    val firstname = document.getString("firstname") ?: ""
+                    val lastname = document.getString("lastname") ?: ""
                     val sessionCourse = document.getString("sessionCourse") ?: ""
                     val sessionDate = document.getString("sessionDate") ?: ""
                     val startTime = document.getString("startTime") ?: ""
                     val endTime = document.getString("endTime") ?: ""
                     val hourlyRate = document.getString("hourlyRate") ?: ""
 
-                    val session = Session(name, sessionCourse, sessionDate, startTime, endTime, hourlyRate)
+                    val session = Session(firstname,lastname, sessionCourse, sessionDate, startTime, endTime, hourlyRate)
                     sessionList.add(session)
                 }
 
