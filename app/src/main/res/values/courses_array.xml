@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="courses">
+        <item>CPTR113 Introduction to Programming</item>
+        <item>CPTR151 Principles of Programming I</item>
+        <item>CPTR204 Website Design and Implementation</item>
+        <item>CPTR213 Fundamentals of Databases</item>
+        <item>CPTR235 Software Engineering</item>
+        <item>CPTR242 Principles of Programming II</item>
+        <item>CPTR252 Data Structures and Algorithms</item>
+        <item>CPTR282 Computer Organization and Architecture</item>
+        <item>CPTR293 Field Group Project</item>
+        <item>CPTR300 Colloquium</item>
+        <item>CPTR304 Internet Authoring</item>
+        <item>CPTR311 Discrete Structures in Computer Science</item>
+        <item>CPTR313 Fundamentals of Information Security</item>
+        <item>CPTR315 Theories of Programming Languages</item>
+        <item>CPTR355 Algorithm Design and Analysis</item>
+        <item>CPTR365 Artificial Intelligence</item>
+        <item>CPTR375 Operating Systems</item>
+        <item>CPTR380 Data Telecommunications</item>
+        <item>CPTR401 Seminar in CIS</item>
+        <item>CPTR415 Human Computer Interaction</item>
+        <item>CPTR450 Database Systems</item>
+        <item>CPTR489 CIS Project/Research Proposal Dev.</item>
+        <item>CPTR490 Advanced Project</item>
+        <item>MGMT252 Principles of Management</item>
+        <item>MATH165 Pre-Calculus I</item>
+        <item>MATH166 Pre-Calculus II</item>
+        <item>MATH171 Calculus I</item>
+        <item>MATH287 Linear Algebra</item>
+        <item>MATH305 Probability and Statistics</item>
+        <item>COMM251 Oral Communication</item>
+        <item>CPTR120 Computer Applications</item>
+        <item>CPTR123 Computer Ethics</item>
+        <item>EDUC100 Freshman Seminar</item>
+        <item>EDUC151 Fundamentals of Christian Education</item>
+        <item>ENGL119 Freshman Composition I</item>
+        <item>ENGL120 Freshman Composition II</item>
+        <item>HPED111 Health and Physical Education</item>
+        <item>MATH121 College Algebra</item>
+        <item>PSYC119 Principles of Psychology</item>
+        <item>RELB113 God and Human Life</item>
+        <item>RELB210 Daniel and Revelation</item>
+        <item>RELB305 Life and Teachings of Christ</item>
+        <item>RELB306 Prophetic Studies</item>
+        <item>BIOL155 Foundations of Biology I</item>
+        <item>CHEM121 - General Chemistry I</item>
+        <item>PHYS151 - General Physics I</item>
+    </string-array>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="department_array">
+        <item>Select Department</item>
+        <item>School of Nursing</item>
+        <item>Department of Medical Technology</item>
+        <item>Department of Computer Information Science</item>
+        <item>Department of Biology, Chemistry, Environmental Science</item>
+        <item>Department of Mathematics and Engineering</item>
+        <item>Department of Dietetics, Nutrition and Food Science</item>
+        <item>Department of Dental Hygiene</item>
+        <item>Department of Communication Studies</item>
+        <item>Department of Music and Fine Arts</item>
+        <item>Department of Social Work</item>
+        <item>Department of Criminal Justice</item>
+        <item>Department of Humanities</item>
+        <item>Department of General Studies</item>
+        <item>Department of Teacher Education</item>
+        <item>Department of Graduate Education and Leadership</item>
+        <item>Department of Business Management and Hospitality</item>
+    </string-array>
+
+
+    <string-array name="student_type_array">
+        <item>Select Student Type</item>
+        <item>Freshman</item>
+        <item>Sophomore</item>
+        <item>Junior</item>
+        <item>Senior</item>
+        <item>Graduate</item>
+    </string-array>
+
+    <string-array name="term_array">
+        <item>Select Term</item>
+        <item>Spring</item>
+        <item>Summer Session 1</item>
+        <item>Summer Session 2</item>
+        <item>Fall</item>
+    </string-array>
+
+
+</resources>
